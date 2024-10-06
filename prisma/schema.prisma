@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement()) // Using autoincrement() for compatibility
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  // Relations
+  orders    Order[]
+  reviews   Review[]
+}
+
+model Category {
+  id          Int       @id @default(autoincrement()) // Using autoincrement() for compatibility
+  name        String    @unique // Unique constraint for category names
+  description String?
+  // Relations
+  products    Product[]
+}
+
+model Product {
+  id          Int         @id @default(autoincrement()) // Using autoincrement() for compatibility
+  name        String
+  description String?
+  price       Decimal     @db.Decimal(10, 2) // Specify precision and scale
+  createdAt   DateTime    @default(now()) @map("created_at")
+  categoryId  Int?        @map("category_id")
+  url         String
+  // Relations
+  category    Category?   @relation(fields: [categoryId], references: [id])
+  orderItems  OrderItem[]
+  reviews     Review[]
+}
+
+model Order {
+  id          Int         @id @default(autoincrement()) // Using autoincrement() for compatibility
+  totalAmount Decimal     @db.Decimal(10, 2)
+  status      String
+  createdAt   DateTime    @default(now())
+  userId      Int
+  // Relations
+  user        User        @relation(fields: [userId], references: [id])
+  orderItems  OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement()) // Using autoincrement() for compatibility
+  quantity  Int
+  price     Decimal @db.Decimal(10, 2)
+  orderId   Int
+  productId Int
+  // Relations
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model Review {
+  id        Int      @id @default(autoincrement()) // Using autoincrement() for compatibility
+  rating    Int      @default(5)
+  comment   String?
+  createdAt DateTime @default(now())
+  productId Int
+  userId    Int
+  // Relations
+  product   Product  @relation(fields: [productId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}

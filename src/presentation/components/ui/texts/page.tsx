@@ -1,0 +1,177 @@
+type Props = {
+  children: any;
+  className?: string;
+  onClick?: () => void;
+  scrolled?: boolean;
+  href?: string;
+  color?: string;
+};
+
+function Title({ children, className = "" }: Props) {
+  return (
+    <h1
+      className={`${className} text-white letter-3d text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold`}>
+      {children}
+    </h1>
+  );
+}
+
+function TitleWhite({ scrolled = false, children, className = "" }: Props) {
+  return (
+    <h1
+      className={`${className} text-background text-4xl sm:text-5xl md:text-6xl font-thin text-black dark:text:white`}>
+      {children}
+    </h1>
+  );
+}
+
+function Subtitle({ children, className = "", color }: Props) {
+  return (
+    <h2
+      className={`${className} text-${color} text-background text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text:white`}>
+      {children}
+    </h2>
+  );
+}
+
+function SectionTitle({ children, className = "" }: Props) {
+  return (
+    <h2
+      className={`${className} uppercase letter-3d text-[2rem]  lg:text-5xl font-bold text-black`}>
+      {children}
+    </h2>
+  );
+}
+
+function SectionSubTitle({ children, className = "" }: Props) {
+  return (
+    <h3
+      className={`${className} uppercase tracking-[0.5rem] text-md sm:text-md spacing md:text-md font-normal text-black`}>
+      {children}
+    </h3>
+  );
+}
+
+function SectionTitleColoured({ children, className = "" }: Props) {
+  return (
+    <h4
+      className={`${className} uppercase text-2xl spacing md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-primary`}>
+      {children}
+    </h4>
+  );
+}
+
+function LargeText({ children, className = "" }: Props) {
+  return (
+    <h3
+      className={`${className} text-background text-xl sm:text-2xl md:text-3xl font-normal`}>
+      {children}
+    </h3>
+  );
+}
+
+function LargeBold({ children, className = "" }: Props) {
+  return (
+    <h3
+      className={`${className} text-background text-xl sm:text-2xl md:text-3xl font-bold`}>
+      {children}
+    </h3>
+  );
+}
+
+function BodyTitle({ children, className = "" }: Props) {
+  return (
+    <h4
+      className={`${className} text-background text-base sm:text-lg md:text-xl font-normal`}>
+      {children}
+    </h4>
+  );
+}
+
+function BodyBold({ children, className = "" }: Props) {
+  return (
+    <h4
+      className={`${className} text-background text-sm sm:text-sm md:text-md lg:text-lg font-bold`}>
+      {children}
+    </h4>
+  );
+}
+
+function ParagraphText({ children, className = "", color }: Props) {
+  return (
+    <p
+      className={`${className} text-${color} text-md sm:text-lg md:text-xl lg:text-xl xl:text-3xl font-semibold lg:font-medium`}>
+      {children}
+    </p>
+  );
+}
+
+function ParagraphSectionText({ children, className = "" }: Props) {
+  return (
+    <p
+      className={`${className} text-base md:text-lg lg:text-xl xl:text- font-normal leading-relaxed`}>
+      {children}
+    </p>
+  );
+}
+
+function Text({ children, className = "" }: Props) {
+  return (
+    <p
+      className={`${className} font-sans text-background text-xs sm:text-sm md:text-md font-light`}>
+      {children}
+    </p>
+  );
+}
+
+function TextAllwaysBlack({ children, className = "" }: Props) {
+  return (
+    <p
+      className={`${className} font-sans text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-normal`}>
+      {children}
+    </p>
+  );
+}
+
+function AnimatedNavItem({ onClick, href, children, className = "" }: Props) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`${className} font-sans text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl xl:text-2xl relative overflow-hidden hover:text-[#BF0010]`}>
+      {children}
+    </a>
+  );
+}
+
+function TextWithLink({ href, children, className = "" }: Props) {
+  return (
+    <li
+      className={`${className} text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl sm:text-xl md:text-2xl lg:text-xs relative overflow-hidden`}>
+      <a
+        href={href}
+        className="h-full transition-transform duration-500 hover:animate-move-up-disappear">
+        {children}
+      </a>
+    </li>
+  );
+}
+
+export {
+  Title,
+  Text,
+  TitleWhite,
+  Subtitle,
+  LargeText,
+  LargeBold,
+  BodyTitle,
+  BodyBold,
+  ParagraphSectionText,
+  AnimatedNavItem,
+  TextAllwaysBlack,
+  SectionTitle,
+  SectionSubTitle,
+  TextWithLink,
+  ParagraphText,
+  SectionTitleColoured,
+};
