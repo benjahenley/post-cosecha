@@ -1,0 +1,38 @@
+import { RedButton, RedButtonComplement } from "../../ui/buttons/page";
+import ContactForm from "../../ui/form/page";
+import {
+  ParagraphSectionText,
+  SectionSubTitle,
+  SectionTitle,
+} from "../../ui/texts/page";
+
+interface CardProps {
+  className?: string;
+}
+export default function Contacto({ className }: CardProps) {
+  return (
+    <>
+      <div className={`${className} w-full flex justify-center pt-10 lg:pb-10`}>
+        <div className="relative z-30 w-full  bg-white max-w-md md:max-w-lg lg:max-w-2xl  p-2 lg:p-5 rounded-3xl shadow-md">
+          <SectionSubTitle className="mt-10 mb-5 text-center">
+            Escribinos!
+          </SectionSubTitle>
+          <SectionTitle className="mb-5 px-5 text-center">
+            Estamos para ayudarte
+          </SectionTitle>
+          <ContactForm />
+        </div>
+        <img
+          src={"/img/crops.png"}
+          className="absolute left-0 right-0 top-0 bottom-0 w-full h-full z-99 object-cover"
+        />
+
+        <div className="absolute top-[15px] transform -translate-x-1/2 z-20 bg-gray-100 lg:top-0 w-auto h-full rounded-t-3xl" />
+
+        <div className="absolute top-[-5px] transform -translate-x-1/2 z-10 bg-gray-200 lg:top-0 w-auto h-full rounded-t-3xl" />
+
+        <div className="absolute top-[-25px] transform -translate-x-1/2 z-0 bg-gray-300 lg:top-0 w-auto  h-full rounded-t-3xl" />
+      </div>
+    </>
+  );
+}
