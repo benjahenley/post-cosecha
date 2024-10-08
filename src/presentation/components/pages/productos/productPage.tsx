@@ -31,7 +31,7 @@ export default function ProductComp() {
   };
 
   return (
-    <section className="mt-[5.5rem] mb-[3rem] md:mt-[7rem] flex flex-col items-center justify-center p-2 lg:p-5 w-full max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
+    <section className="mt-[7rem] mb-[3rem] md:mt-[7rem] flex flex-col items-center justify-center p-2 lg:p-5 w-full max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
       <div className="w-full flex flex-col justify-center items-center">
         {product && <ProductCardSingle {...product} />}
 

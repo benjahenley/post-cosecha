@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { BodyBold } from "../texts/page";
 
 const ContactForm = () => {
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(undefined);
+  const [failure, setFailure] = useState(undefined);
 
   const {
     register,
@@ -25,19 +26,23 @@ const ContactForm = () => {
       if (response.ok) {
         reset();
         setSuccess("Email sent successfully");
+        setFailure(undefined); // Clear failure message
       } else {
-        setSuccess("Failed to send email.");
+        setFailure("Failed to send email.");
+        setSuccess(undefined); // Clear success message
       }
     } catch (error) {
       console.error(error);
-      setSuccess("Failed to send email.");
+      setFailure("Failed to send email.");
+      setSuccess(undefined); // Clear success message
     }
   };
 
   return (
-    <div className="w-full max-w-screen-md lg:max-w-screen-lg mx-auto py-5 px-2 md:px-3 bg-white shadow-lg rounded-3xl pt-10">
+    <div className="w-full max-w-screen-md lg:max-w-screen-lg mx-auto pb-5 px-2 md:px-3 bg-white shadow-lg rounded-3xl ">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full pt-2">
         <div className="flex flex-col gap-5 md:px-5 w-full">
+          {/* Name and Phone Fields */}
           <div className="flex flex-row w-full justify-center gap-2">
             <div className="w-[50%]">
               <label
@@ -78,6 +83,7 @@ const ContactForm = () => {
             </div>
           </div>
 
+          {/* Email and Subject Fields */}
           <div className="flex flex-row w-full justify-center gap-2">
             <div className="w-[50%]">
               <label
@@ -124,6 +130,7 @@ const ContactForm = () => {
             </div>
           </div>
 
+          {/* Message Field */}
           <div>
             <label
               htmlFor="mensaje"
@@ -141,16 +148,29 @@ const ContactForm = () => {
             )}
           </div>
         </div>
-        <div className="mt-5  w-full mx-auto grid items-center md:px-5 max-w-xs">
-          <div className={`${success ? "flex" : "hidden"}`}>
-            Mensaje enviado!
+
+        {/* Success / Failure Messages */}
+        <div className="mt-5 w-full max-w-lg mx-auto grid items-center justify-center md:px-5 text-center">
+          <div className="w-full">
+            {success && (
+              <div className="flex text-green-600 text-center m-auto">
+                {success}
+              </div>
+            )}
+            {failure && (
+              <div className="flex text-red-500 text-center">{failure}</div>
+            )}
           </div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full m-auto py-2 px-4 bg-primary text-white font-semibold rounded-md shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75 transform transition-transform duration-300 ease-in-out hover:scale-105">
-            <BodyBold>{isSubmitting ? "Enviando..." : "Enviar"}</BodyBold>
-          </button>
+
+          {/* Submit Button */}
+          <div className="w-full">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="px-10 w-full py-2  bg-primary text-white font-semibold rounded-md shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75 transform transition-transform duration-300 ease-in-out hover:scale-105">
+              <BodyBold>{isSubmitting ? "Enviando..." : "Enviar"}</BodyBold>
+            </button>
+          </div>
         </div>
       </form>
     </div>

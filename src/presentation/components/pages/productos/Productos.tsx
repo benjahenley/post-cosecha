@@ -45,7 +45,7 @@ export default function Productos({ className }: CardProps) {
 
   return (
     <div className={className}>
-      <section className="pt-[5rem] pb-[3rem] md:pt-[4rem] flex flex-col items-center justify-center p-2  max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
+      <section className="pt-[7rem] mb-[3rem] md:mt-[7rem] flex flex-col items-center justify-center p-2 lg:p-5 max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
         <InfoSection
           title="productos"
           subtitle="compre ahora"

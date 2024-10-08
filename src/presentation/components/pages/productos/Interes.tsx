@@ -1,3 +1,4 @@
+import InfoSection from "../../ui/infoSection/page";
 import {
   ParagraphSectionText,
   SectionSubTitle,
@@ -12,11 +13,10 @@ export default function InteresGeneral({ className }: CardProps) {
   return (
     <div className="relative m-auto py-20 w-full bg-lightGray grid items-center justify-center h-full">
       <div className="max-w-screen-lg">
-        <div className="flex flex-col items-center mb-5 xl:mb-10">
-          <SectionSubTitle className="mb-5">Interés General</SectionSubTitle>
-          <SectionTitle className="">información importante</SectionTitle>
-          <img src="/img/text-decor/wing.png" className="h-20"></img>
-        </div>
+        <InfoSection
+          subtitle="interés general"
+          title="información importante"
+        />
         <div className="px-2 md:px-5">
           <ParagraphSectionText className="mb-5 text-pretty">
             Evitar la inhalación y el contacto con la piel durante el manipuleo.
