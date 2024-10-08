@@ -12,11 +12,10 @@ export default function InteresGeneral({ className }: CardProps) {
   return (
     <div className="relative m-auto py-20 w-full bg-lightGray grid items-center justify-center h-full">
       <div className="max-w-screen-lg">
-        <div className="text-center">
+        <div className="flex flex-col items-center mb-5 xl:mb-10">
           <SectionSubTitle className="mb-5">Interés General</SectionSubTitle>
-          <SectionTitle className="mb-10 md:mb-16 xl:mb-20">
-            información importante
-          </SectionTitle>
+          <SectionTitle className="">información importante</SectionTitle>
+          <img src="/img/text-decor/wing.png" className="h-20"></img>
         </div>
         <div className="px-2 md:px-5">
           <ParagraphSectionText className="mb-5 text-pretty">

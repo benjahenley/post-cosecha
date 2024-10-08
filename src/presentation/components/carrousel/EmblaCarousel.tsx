@@ -35,7 +35,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <section className="embla ">
-      <div className="embla__viewport " ref={emblaRef}>
+      <div
+        className="embla__viewport overflow-y-visible overflow-x-hidden pt-8"
+        ref={emblaRef}>
         <div className="embla__container p-2">
           {slides.map((slide: Product, index) => {
             return (

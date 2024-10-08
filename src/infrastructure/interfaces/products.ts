@@ -10,3 +10,10 @@ export type Product = {
   certificate: string;
   tag: string;
 };
+
+export type ImageType = {
+  src: string;
+  width?: number;
+  height?: number;
+  cropped?: boolean;
+};

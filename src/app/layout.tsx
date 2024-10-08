@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "@/presentation/components/providers/darkMode";
 import "public/css/embla/embla.css";
 import "public/css/global.css";
+import "photoswipe/style.css";
 import Footer from "@/presentation/components/ui/footer/page";
 import Navbar from "@/presentation/components/ui/navbar/page";
 

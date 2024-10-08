@@ -1,9 +1,6 @@
 import { RightArrow } from "@/assets/svg";
 import { BodyBold } from "../texts/page";
-
-const Button = (props: any): any => {
-  <button className={props.className}>{props.children}</button>;
-};
+import { forwardRef } from "react";
 
 type ButtonProps = {
   className: string;
@@ -43,9 +40,10 @@ export function RedButton({ className, children, type, href }: any) {
   );
 }
 
-export function BlueButton({ className, children, type, bg }: any) {
+export function ColoredButton({ className, children, type, bg, onClick }: any) {
   return (
     <button
+      onClick={onClick}
       className={`${className} p-[0.5rem] w-full max-w-[15rem] lg:max-w-[20rem] rounded-full text-white text-md uppercase bg-primary font-bold flex items-center justify-center overflow-hidden relative group`}
       // style={{ backgroundColor: bg }}
       type={type}>
@@ -54,21 +52,28 @@ export function BlueButton({ className, children, type, bg }: any) {
     </button>
   );
 }
-
-export function RedButtonComplement({ className, children, href }: any) {
-  return (
-    <button
-      className={`${className} text-primary w-full text-md lg:text-lg uppercase font-bold overflow-hidden relative group `}
-      type="button">
-      <a
-        href={href}
-        className="inline-block transform transition-transform duration-300 group-hover:-translate-x-2 group-hover:underline">
-        {children}
-      </a>
-      <RightArrow className="hidden w-3 h-3 ml-2 opacity-0 text-primary font-extrabold transform transition-[opacity,translate] duration-500 -translate-x-2 group-hover:translate-x-0 group-hover:inline group-hover:opacity-100" />
-    </button>
-  );
-}
+export const RedButtonComplement = forwardRef(
+  (
+    { className = "", children, href, ...props }: any,
+    ref: React.Ref<HTMLButtonElement>
+  ) => {
+    return (
+      <button
+        ref={ref}
+        className={`${className} text-primary w-full text-md lg:text-lg uppercase font-bold overflow-hidden relative group`}
+        type="button"
+        {...props}>
+        <a
+          href={href}
+          className="inline-block transform transition-transform duration-300 group-hover:-translate-x-2 group-hover:underline">
+          {children}
+        </a>
+        <RightArrow className="hidden w-3 h-3 ml-2 opacity-0 text-primary font-extrabold transform transition-[opacity,translate] duration-500 -translate-x-2 group-hover:translate-x-0 group-hover:inline group-hover:opacity-100" />
+      </button>
+    );
+  }
+);
+RedButtonComplement.displayName = "RedButtonComplement";
 
 export function BlueButtonAnimated({ className, children, type }: any) {
   return (

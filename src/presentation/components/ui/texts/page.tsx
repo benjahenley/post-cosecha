@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 type Props = {
   children: any;
   className?: string;
@@ -5,6 +7,8 @@ type Props = {
   scrolled?: boolean;
   href?: string;
   color?: string;
+  ref?: string;
+  style?: any;
 };
 
 function Title({ children, className = "" }: Props) {
@@ -34,32 +38,44 @@ function Subtitle({ children, className = "", color }: Props) {
   );
 }
 
-function SectionTitle({ children, className = "" }: Props) {
-  return (
-    <h2
-      className={`${className} uppercase letter-3d text-[2rem]  lg:text-5xl font-bold text-black`}>
-      {children}
-    </h2>
-  );
-}
+const SectionTitle = forwardRef<HTMLHeadingElement, Props>(
+  ({ children, className = "", ...props }, ref) => {
+    return (
+      <h2
+        ref={ref}
+        className={`${className} uppercase letter-3d text-[2rem] lg:text-5xl font-bold text-black`}
+        {...props}>
+        {children}
+      </h2>
+    );
+  }
+);
 
-function SectionSubTitle({ children, className = "" }: Props) {
-  return (
-    <h3
-      className={`${className} uppercase tracking-[0.5rem] text-md sm:text-md spacing md:text-md font-normal text-black`}>
-      {children}
-    </h3>
-  );
-}
+const SectionSubTitle = forwardRef<HTMLHeadingElement, Props>(
+  ({ children, className = "", ...props }, ref) => {
+    return (
+      <h3
+        ref={ref}
+        className={`${className} uppercase tracking-[0.5rem] text-md sm:text-md spacing md:text-md font-normal text-black`}
+        {...props}>
+        {children}
+      </h3>
+    );
+  }
+);
 
-function SectionTitleColoured({ children, className = "" }: Props) {
-  return (
-    <h4
-      className={`${className} uppercase text-2xl spacing md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-primary`}>
-      {children}
-    </h4>
-  );
-}
+const SectionTitleColoured = forwardRef<HTMLHeadingElement, Props>(
+  ({ children, className = "", ...props }, ref) => {
+    return (
+      <h4
+        ref={ref}
+        className={`${className} uppercase text-2xl spacing md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-primary`}
+        {...props}>
+        {children}
+      </h4>
+    );
+  }
+);
 
 function LargeText({ children, className = "" }: Props) {
   return (
@@ -106,14 +122,18 @@ function ParagraphText({ children, className = "", color }: Props) {
   );
 }
 
-function ParagraphSectionText({ children, className = "" }: Props) {
-  return (
-    <p
-      className={`${className} text-base md:text-lg lg:text-xl xl:text- font-normal leading-relaxed`}>
-      {children}
-    </p>
-  );
-}
+const ParagraphSectionText = forwardRef<HTMLParagraphElement, Props>(
+  ({ children, className = "", ...props }, ref) => {
+    return (
+      <p
+        ref={ref}
+        className={`${className} text-base md:text-lg lg:text-xl xl:text- font-normal leading-relaxed`}
+        {...props}>
+        {children}
+      </p>
+    );
+  }
+);
 
 function Text({ children, className = "" }: Props) {
   return (
@@ -133,12 +153,19 @@ function TextAllwaysBlack({ children, className = "" }: Props) {
   );
 }
 
-function AnimatedNavItem({ onClick, href, children, className = "" }: Props) {
+function AnimatedNavItem({
+  onClick,
+  href,
+  children,
+  className = "",
+  style,
+}: Props) {
   return (
     <a
       href={href}
+      style={style}
       onClick={onClick}
-      className={`${className} font-sans text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl xl:text-2xl relative overflow-hidden hover:text-[#BF0010]`}>
+      className={`${className} animate-fadeInLeftBounce font-sans text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl xl:text-2xl relative overflow-hidden hover:text-[#BF0010]`}>
       {children}
     </a>
   );
@@ -156,6 +183,11 @@ function TextWithLink({ href, children, className = "" }: Props) {
     </li>
   );
 }
+
+SectionSubTitle.displayName = "SectionSubTitle";
+SectionTitle.displayName = "SectionTitle";
+ParagraphSectionText.displayName = "ParagraphSectionText";
+SectionTitleColoured.displayName = "SectionTitleColoured";
 
 export {
   Title,
