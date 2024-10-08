@@ -43,7 +43,7 @@ const SectionTitle = forwardRef<HTMLHeadingElement, Props>(
     return (
       <h2
         ref={ref}
-        className={`${className} uppercase letter-3d text-[2.7rem] lg:text-5xl font-bold text-black`}
+        className={`${className} uppercase letter-3d text-[2.5rem] lg:text-5xl font-bold text-black`}
         {...props}>
         {children}
       </h2>
