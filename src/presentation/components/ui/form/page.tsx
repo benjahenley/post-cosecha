@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { RedButtonComplement } from "../buttons/page";
-import { BodyBold, SectionSubTitle, SectionTitle } from "../texts/page";
+import { BodyBold } from "../texts/page";
 
 const ContactForm = () => {
   const [success, setSuccess] = useState("");
@@ -34,9 +33,6 @@ const ContactForm = () => {
       setSuccess("Failed to send email.");
     }
   };
-  useEffect(() => {
-    console.log(name);
-  }, [name]);
 
   return (
     <div className="w-full max-w-screen-md lg:max-w-screen-lg mx-auto py-5 px-2 md:px-3 bg-white shadow-lg rounded-3xl pt-10">

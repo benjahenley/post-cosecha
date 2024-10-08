@@ -87,13 +87,22 @@ function Navbar(props: any) {
 
         <div className="w-full h-full hidden sm:flex flex-row md:items-center gap-5 justify-end max-w-lg">
           <ul className="h-full w-auto decoration-none flex flex-row items-center justify-end gap-[1rem] flex-grow">
-            <AnimatedNavItem scrolled={scrolled} href="/empresa">
+            <AnimatedNavItem
+              scrolled={scrolled}
+              href="/empresa"
+              style={{ animationDelay: "0.1s" }}>
               Empresa
             </AnimatedNavItem>
-            <AnimatedNavItem scrolled={scrolled} href="/productos">
+            <AnimatedNavItem
+              scrolled={scrolled}
+              href="/productos"
+              style={{ animationDelay: "0.3s" }}>
               Productos
             </AnimatedNavItem>
-            <AnimatedNavItem scrolled={scrolled} href="/contacto">
+            <AnimatedNavItem
+              scrolled={scrolled}
+              href="/contacto"
+              style={{ animationDelay: "0.5s" }}>
               Contacto
             </AnimatedNavItem>
           </ul>

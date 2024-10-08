@@ -49,10 +49,46 @@ const config: Config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeDown: {
+          "0%": { opacity: "0", transform: "translateY(-20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeLeft: {
+          "0%": { opacity: "0", transform: "translateX(-40px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeRight: {
+          "0%": { opacity: "0", transform: "translateX(40px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInLeftBounce: {
+          "0%": { opacity: "0", transform: "translateX(-50px)" },
+          "60%": { opacity: "1", transform: "translateX(10px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(100px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         marquee: "marquee 25s linear infinite",
         marqueeSmall: "marquee 8s linear infinite",
+        fadeIn: "fadeIn 1s ease-out",
+        fadeUp: "fadeUp 1s ease-in",
+        fadeDown: "fadeDown 1s ease-out",
+        fadeLeft: "fadeLeft 1s ease-out",
+        fadeRight: "fadeRight 1s ease-out",
+        fadeInLeftBounce: "fadeInLeftBounce 0.8s ease-out forwards",
+        slideUp: "slideUp 0.6s ease-out forwards",
       },
     },
   },

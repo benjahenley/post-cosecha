@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { RedButtonComplement } from "../../ui/buttons/page";
 import {
   ParagraphSectionText,
@@ -12,6 +12,44 @@ interface CardProps {
 }
 
 export default function Nosotros({ className }: CardProps) {
+  const [isSubTitleVisible, setIsSubTitleVisible] = useState(false);
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+
+  const subTitleRef = useRef(null);
+  const titleRef = useRef(null);
+  const textRef = useRef(null);
+
+  // Intersection Observer to trigger animations when elements are in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === subTitleRef.current) {
+              setIsSubTitleVisible(true);
+            } else if (entry.target === titleRef.current) {
+              setIsTitleVisible(true);
+            } else if (entry.target === textRef.current) {
+              setIsTextVisible(true);
+            }
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (subTitleRef.current) observer.observe(subTitleRef.current);
+    if (titleRef.current) observer.observe(titleRef.current);
+    if (textRef.current) observer.observe(textRef.current);
+
+    return () => {
+      if (subTitleRef.current) observer.unobserve(subTitleRef.current);
+      if (titleRef.current) observer.unobserve(titleRef.current);
+      if (textRef.current) observer.unobserve(textRef.current);
+    };
+  }, []);
+
   const [transform, setTransform] = useState("none");
   const [boxShadow, setBoxShadow] = useState(
     "10px 10px 20px rgba(0, 0, 0, 0.2)"
@@ -48,9 +86,23 @@ export default function Nosotros({ className }: CardProps) {
     <div className={className}>
       <section className="py-10 md:py-20 flex flex-col items-center w-full m-auto max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-screen-lg px-2">
         <div className="flex flex-col items-center xl:mb-10">
-          <SectionSubTitle className="md:mb-5">Empresa</SectionSubTitle>
-          <SectionTitle className="">Sobre Nosotros</SectionTitle>
-          <img src="/img/text-decor/wing.png" className="h-20"></img>
+          <SectionSubTitle
+            ref={subTitleRef}
+            className={`md:mb-5 ${
+              isSubTitleVisible ? "animate-fadeLeft" : "opacity-0"
+            }`}>
+            Empresa
+          </SectionSubTitle>
+          <SectionTitle
+            ref={titleRef}
+            className={`${isTitleVisible ? "animate-fadeRight" : "opacity-0"}`}>
+            Sobre Nosotros
+          </SectionTitle>
+          <img
+            src="/img/text-decor/wing.png"
+            className={`${
+              isTextVisible ? "animate-fadeUp" : "opacity-0"
+            } h-20`}></img>
         </div>
         <div className="relative flex flex-col-reverse xl:flex-row-reverse gap-5 items-start">
           <a
@@ -63,21 +115,25 @@ export default function Nosotros({ className }: CardProps) {
               boxShadow: boxShadow,
               willChange: "transform", // Optimize rendering
             }}>
-            {/* Wrapper Div for Transform */}
             <div className="rounded-3xl w-full h-full">
               <img
                 src="img/leaves3.jpg"
-                className="hidden xl:block max-h-[34rem] w-full h-full"
+                className={`${isTextVisible ? "animate-fadeIn" : "opacity-0"}
+                 hidden xl:block max-h-[34rem] w-full h-full`}
               />
             </div>
           </a>
           <div></div>
           <img
             src="img/leaves.jpg"
-            className="xl:hidden max-h-[34rem]  rounded-3xl"
+            className="xl:hidden max-h-[34rem] rounded-3xl"
           />
           <div className="flex flex-col items-end h-full w-full">
-            <ParagraphSectionText className="text-center xl:text-right xl:max-w-md px-0  text-pretty">
+            <ParagraphSectionText
+              ref={textRef}
+              className={`text-center xl:text-right xl:max-w-md px-0 text-pretty ${
+                isTextVisible ? "animate-fadeUp" : "opacity-0"
+              }`}>
               Post Cosecha S.R.L. es una empresa dedicada a la producción,
               importación y comercialización de productos específicos para el
               control de plagas de los granos almacenados. <br /> <br /> La
@@ -90,8 +146,11 @@ export default function Nosotros({ className }: CardProps) {
               un mejor servicio al cliente.
             </ParagraphSectionText>
             <RedButtonComplement
+              ref={textRef}
               href="/empresa"
-              className="flex items-center justify-center xl:justify-end mt-5 text-center md:text-right w-full">
+              className={`${
+                isTextVisible ? "animate-fadeUp" : "opacity-0"
+              } flex items-center justify-center xl:justify-end mt-5 text-center md:text-right w-full`}>
               Saber Más
             </RedButtonComplement>
           </div>

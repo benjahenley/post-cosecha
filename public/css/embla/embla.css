@@ -14,12 +14,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .embla__viewport {
-    overflow: hidden;
-  }
-}
-
 .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
