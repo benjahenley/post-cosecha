@@ -18,25 +18,22 @@ function Navbar(props: any) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // First scroll effect: background turns black after scrolling 100px
       if (currentScrollY > 100) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
 
-      // Second scroll effect: Navbar disappears after scrolling past 200px
       if (currentScrollY > 700 && currentScrollY > lastScrollY) {
         setHideNavbar(true);
       } else if (currentScrollY < lastScrollY) {
-        setHideNavbar(false); // Navbar reappears when scrolling up
+        setHideNavbar(false);
       }
 
       lastScrollY = currentScrollY;
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      // Check if the click is outside of the menu (ul element)
       if (
         isMenuOpen &&
         event.target instanceof HTMLElement &&

@@ -1,51 +1,33 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { RedButtonComplement } from "../../ui/buttons/page";
-import {
-  ParagraphSectionText,
-  SectionSubTitle,
-  SectionTitle,
-} from "../../ui/texts/page";
+import { ParagraphSectionText } from "../../ui/texts/page";
+import InfoSection from "../../ui/infoSection/page";
 
 interface CardProps {
   className?: string;
 }
 
 export default function Nosotros({ className }: CardProps) {
-  const [isSubTitleVisible, setIsSubTitleVisible] = useState(false);
-  const [isTitleVisible, setIsTitleVisible] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  const subTitleRef = useRef(null);
-  const titleRef = useRef(null);
   const textRef = useRef(null);
 
-  // Intersection Observer to trigger animations when elements are in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target === subTitleRef.current) {
-              setIsSubTitleVisible(true);
-            } else if (entry.target === titleRef.current) {
-              setIsTitleVisible(true);
-            } else if (entry.target === textRef.current) {
-              setIsTextVisible(true);
-            }
+          if (entry.isIntersecting && entry.target === textRef.current) {
+            setIsTextVisible(true);
           }
         });
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
-    if (subTitleRef.current) observer.observe(subTitleRef.current);
-    if (titleRef.current) observer.observe(titleRef.current);
     if (textRef.current) observer.observe(textRef.current);
 
     return () => {
-      if (subTitleRef.current) observer.unobserve(subTitleRef.current);
-      if (titleRef.current) observer.unobserve(titleRef.current);
       if (textRef.current) observer.unobserve(textRef.current);
     };
   }, []);
@@ -85,26 +67,11 @@ export default function Nosotros({ className }: CardProps) {
   return (
     <div className={className}>
       <section className="py-10 md:py-20 flex flex-col items-center w-full m-auto max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-screen-lg px-2">
-        <div className="flex flex-col items-center xl:mb-10">
-          <SectionSubTitle
-            ref={subTitleRef}
-            className={`md:mb-5 ${
-              isSubTitleVisible ? "animate-fadeLeft" : "opacity-0"
-            }`}>
-            Empresa
-          </SectionSubTitle>
-          <SectionTitle
-            ref={titleRef}
-            className={`${isTitleVisible ? "animate-fadeRight" : "opacity-0"}`}>
-            Sobre Nosotros
-          </SectionTitle>
-          <img
-            src="/img/text-decor/wing.png"
-            className={`${
-              isTextVisible ? "animate-fadeUp" : "opacity-0"
-            } h-20`}></img>
-        </div>
+        {/* InfoSection with title and subtitle */}
+        <InfoSection title="Sobre Nosotros" subtitle="Empresa" />
+
         <div className="relative flex flex-col-reverse xl:flex-row-reverse gap-5 items-start">
+          {/* Interactive Image on the right */}
           <a
             className="w-full h-full overflow-hidden"
             href="/empresa"
@@ -118,17 +85,21 @@ export default function Nosotros({ className }: CardProps) {
             <div className="rounded-3xl w-full h-full">
               <img
                 src="img/leaves3.jpg"
-                className={`${isTextVisible ? "animate-fadeIn" : "opacity-0"}
-                 hidden xl:block max-h-[34rem] w-full h-full`}
+                className={`${
+                  isTextVisible ? "animate-fadeIn" : "opacity-0"
+                } hidden xl:block max-h-[34rem] w-full h-full`}
               />
             </div>
           </a>
-          <div></div>
+
+          {/* Static Image for mobile */}
           <img
             src="img/leaves.jpg"
             className="xl:hidden max-h-[34rem] rounded-3xl"
           />
+
           <div className="flex flex-col items-end h-full w-full">
+            {/* Paragraph Text */}
             <ParagraphSectionText
               ref={textRef}
               className={`text-center xl:text-right xl:max-w-md px-0 text-pretty ${
@@ -145,8 +116,9 @@ export default function Nosotros({ className }: CardProps) {
               S.R.L. garantiza una red de distribución inmediata para asegurarle
               un mejor servicio al cliente.
             </ParagraphSectionText>
+
+            {/* Button */}
             <RedButtonComplement
-              ref={textRef}
               href="/empresa"
               className={`${
                 isTextVisible ? "animate-fadeUp" : "opacity-0"

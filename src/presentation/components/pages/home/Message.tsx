@@ -56,7 +56,7 @@ export default function Message({ className }: CardProps) {
       <div
         className={
           className +
-          " py-10 md:py-20 flex flex-col items-center w-full m-auto max-w-md md:max-w-lg lg:max-w-2xl px-2"
+          " pt-20 pb-10 flex flex-col items-center w-full m-auto max-w-md md:max-w-lg lg:max-w-2xl px-2"
         }>
         <SectionSubTitle
           ref={subTitleRef}

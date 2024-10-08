@@ -10,7 +10,7 @@ export default function ProductosPage({ className }: CardProps) {
   return (
     <div className={`${className} relative overflow-hidden`}>
       <Navbar />
-      <Productos className="w-full bg-white pb-10 md:pb-0 mt-10 lg:mt-16" />
+      <Productos className="w-full bg-white pb-10 md:pb-0" />
       <InteresGeneral />
     </div>
   );

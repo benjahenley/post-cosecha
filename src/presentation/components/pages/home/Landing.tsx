@@ -13,7 +13,6 @@ export default function HomeLanding({ className, onSubmit }: CardProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger the fade-in and slide-up animation when the component is mounted
     setIsVisible(true);
   }, []);
 
@@ -36,11 +35,11 @@ export default function HomeLanding({ className, onSubmit }: CardProps) {
       </div>
       <div
         className={`${className} flex flex-col pt-[10rem] md:pt-[12rem] xl:pt-[13rem] justify-between items-center pb-[5rem]`}>
-        <div>
-          <Title className={`text-center ${fadeInClass}`}>POST COSECHA</Title>
+        <div className="text-left sm:text-center">
+          <Title className={`px-5 ${fadeInClass}`}>POST COSECHA</Title>
           <ParagraphText
             color="white"
-            className={`max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl text-center mt-4 px-5 md:px-12 m-auto ${fadeInClass}`}>
+            className={`max-w-md sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl mt-4 pt-5 px-5 md:px-12 sm:m-auto ${fadeInClass}`}>
             Soluciones sustentables y eficientes para afrontar las crecientes
             necesidades del mercado agronómico.
           </ParagraphText>

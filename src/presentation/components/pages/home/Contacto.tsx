@@ -1,5 +1,6 @@
 import { RedButton, RedButtonComplement } from "../../ui/buttons/page";
 import ContactForm from "../../ui/form/page";
+import InfoSection from "../../ui/infoSection/page";
 import {
   ParagraphSectionText,
   SectionSubTitle,
@@ -13,13 +14,8 @@ export default function Contacto({ className }: CardProps) {
   return (
     <>
       <div className={`${className} w-full flex justify-center pt-10 lg:pb-10`}>
-        <div className="relative z-30 w-full  bg-white max-w-md md:max-w-lg lg:max-w-2xl  p-2 lg:p-5 rounded-3xl shadow-md">
-          <SectionSubTitle className="mt-10 mb-5 text-center">
-            Escribinos!
-          </SectionSubTitle>
-          <SectionTitle className="mb-5 px-5 text-center">
-            Estamos para ayudarte
-          </SectionTitle>
+        <div className="relative z-30 w-full bg-white max-w-md md:max-w-lg lg:max-w-2xl p-2 rounded-3xl shadow-md pt-10 md:pt-12">
+          <InfoSection subtitle="escribinos!" title="estamos para ayudarte" />
           <ContactForm />
         </div>
         <img

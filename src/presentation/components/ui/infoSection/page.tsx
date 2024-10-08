@@ -1,17 +1,14 @@
 "use client";
-
 import { useState, useRef, useEffect } from "react";
+import { SectionSubTitle, SectionTitle } from "../texts/page";
 
-import { SectionSubTitle, SectionTitle } from "../../ui/texts/page";
-import EmblaCarousel from "../../carrousel/EmblaCarousel";
-import { PRODUCTS } from "@/infrastructure/lists/products";
-import InfoSection from "../../ui/infoSection/page";
+type Props = {
+  title: string;
+  subtitle: string;
+  style?: any;
+};
 
-interface CardProps {
-  className?: string;
-}
-
-export default function Productos({ className }: CardProps) {
+const InfoSection = ({ title, subtitle, style }: Props) => {
   const [isSubTitleVisible, setIsSubTitleVisible] = useState(false);
   const [isTitleVisible, setIsTitleVisible] = useState(false);
 
@@ -44,17 +41,29 @@ export default function Productos({ className }: CardProps) {
   }, []);
 
   return (
-    <div className={className}>
-      <section className="pt-[5rem] pb-[3rem] md:pt-[4rem] flex flex-col items-center justify-center p-2  max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
-        <InfoSection
-          title="productos"
-          subtitle="compre ahora"
-          style={{ marginBottom: 0 }}
-        />
-        <div className="flex flex-wrap items-center xl:flex-row-reverse gap-14 justify-center">
-          <EmblaCarousel slides={PRODUCTS}></EmblaCarousel>
-        </div>
-      </section>
+    <div className="flex flex-col items-center mb-5 xl:mb-10" style={style}>
+      <SectionSubTitle
+        ref={subTitleRef}
+        className={`mb-2 lg:mb-5 ${
+          isSubTitleVisible ? "animate-fadeLeft" : "opacity-0"
+        }`}>
+        {subtitle}
+      </SectionSubTitle>
+
+      <SectionTitle
+        ref={titleRef}
+        className={`${
+          isTitleVisible ? "animate-fadeRight" : "opacity-0"
+        } text-center`}>
+        {title}
+      </SectionTitle>
+
+      <img
+        src="/img/text-decor/wing.png"
+        className={`${isTitleVisible ? "animate-fadeIn" : "opacity-0"} h-20`}
+      />
     </div>
   );
-}
+};
+
+export default InfoSection;
