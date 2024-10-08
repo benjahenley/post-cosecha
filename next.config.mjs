@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-export default {
+const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
@@ -7,10 +7,18 @@ export default {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["react-svg-loader"],
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            icon: true,
+          },
+        },
+      ],
     });
 
     return config;
   },
-  // output: "export",
 };
+
+export default nextConfig;
