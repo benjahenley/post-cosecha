@@ -1,5 +1,5 @@
-import Productos from "@/presentation/components/pages/home/Productos";
 import InteresGeneral from "@/presentation/components/pages/productos/Interes";
+import Productos from "@/presentation/components/pages/productos/Productos";
 import Navbar from "@/presentation/components/ui/navbar/alternate";
 
 interface CardProps {
