@@ -1,11 +1,8 @@
 import BurguerSVG from "./burguer.svg";
-import InstagramSVG from "./instagram.svg";
 import CrossSVG from "./cross.svg";
 import LogoSVG from "./logo.svg";
 import ProfileSVG from "./profile.svg";
 import SearchSVG from "./search.svg";
-import DaySVG from "./day.svg";
-import NightSVG from "./night.svg";
 import CartSVG from "./cart.svg";
 import RightSVG from "./rightArrow.svg";
 
@@ -40,16 +37,6 @@ export function CrossImg(props: any): any {
       role="button"
       className={props.className}
       onClick={props.onClick}></CrossSVG>
-  );
-}
-
-export function DayImg(props: any): any {
-  return <DaySVG className={props.className} onClick={props.onClick}></DaySVG>;
-}
-
-export function NightImg(props: any): any {
-  return (
-    <NightSVG className={props.className} onClick={props.onClick}></NightSVG>
   );
 }
 
