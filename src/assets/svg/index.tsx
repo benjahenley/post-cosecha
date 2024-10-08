@@ -3,7 +3,6 @@ import CrossSVG from "./cross.svg";
 import LogoSVG from "./logo.svg";
 import ProfileSVG from "./profile.svg";
 import SearchSVG from "./search.svg";
-import CartSVG from "./cart.svg";
 import RightSVG from "./rightArrow.svg";
 
 export function BurguerIcon(props: any): any {
@@ -15,10 +14,6 @@ export function BurguerIcon(props: any): any {
       alt="file"
     />
   );
-}
-
-export function CartImg(props: any): any {
-  return <CartSVG className={props.className}></CartSVG>;
 }
 
 export function ProfileIcon(props: any): any {
