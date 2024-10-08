@@ -13,8 +13,7 @@ export const PRODUCTS: Product[] = [
     ],
     description:
       "De idénticas cualidades que el líquido, garantiza el control total de insectos en granos, silos, semillas, instalaciones, transportes, en la industria molinera, silos bolsa,y alimentos balanceados.",
-    security:
-      "https://www.postcosechasrl.com.ar/wp-content/uploads/2019/11/HOJA-DE-DATOS-DE-SEGURIDAD-DELBUX-POLVO.pdf",
+    security: "/pdf/delbux-polvo.pdf",
     certificate: "/img/certificados/certificado-delbux-polvo.jpg",
     tag: "/img/etiquetas/etiqueta-delbux-polvo.jpg",
   },
@@ -30,8 +29,7 @@ export const PRODUCTS: Product[] = [
     ],
     description:
       "Desarrollado a base de Deltametrina, garantiza el control total de insectos en granos, silos, depósitos, instalaciones, transportes, semillas, subproductos de la industria molinera y alimentos balanceados. De muy baja toxicidad para personas y animales, garantiza la salud del medio ambiente. No es corrosivo, por lo que no deteriora las máquinas de aplicación, transporte, silos de chapa, etc. Delbux suma a su capacidad de control, un gran poder de desalojo.",
-    security:
-      "https://www.postcosechasrl.com.ar/wp-content/uploads/2019/11/HOJA-DE-DATOS-DE-SEGURIDAD-DELBUX-POLVO.pdf",
+    security: "/pdf/delbux.pdf",
     certificate: "/img/certificados/certificado-delbux.jpg",
     tag: "/img/etiquetas/etiqueta-delbux.jpg",
   },
@@ -43,8 +41,7 @@ export const PRODUCTS: Product[] = [
     stats: ["Desodorante, Bactericida, Desengrasante"],
     description:
       "De múltiple acción simultánea, desodoriza, desinfecta y desengrasa eliminando cucarachas y demás insectos. Su acción germicida elimina, además hongos y microorganismos que provocan olores indeseados.",
-    security:
-      "https://www.postcosechasrl.com.ar/wp-content/uploads/2019/11/HOJA-DE-DATOS-DE-SEGURIDAD-DELBUX-POLVO.pdf",
+    security: "",
     certificate: "",
     tag: "/img/etiquetas/etiqueta-desobac.jpg",
   },
@@ -60,8 +57,7 @@ export const PRODUCTS: Product[] = [
     ],
     description:
       "GENERADOR DE GAS INSECTICIDA, La acción del postfuro protege granos, cereales, semillas, legumbres y demás mercaderías almacenadas de la acción de coleópteros (polillas), ácaros y roedores. Presentación en garrafas de 500 pastillas, latas de 16 tubos de 30 pastillas.",
-    security:
-      "https://www.postcosechasrl.com.ar/wp-content/uploads/2019/11/HOJA-DE-DATOS-DE-SEGURIDAD-DELBUX-POLVO.pdf",
+    security: "/pdf/postfuro.pdf",
     certificate: "/img/certificados/certificado-postfuro.jpg",
     tag: "/img/etiquetas/etiqueta-postfuro.jpg",
   },
@@ -77,8 +73,7 @@ export const PRODUCTS: Product[] = [
     ],
     description:
       "Insecticida gorgojicida alifático, compuesto organofosforado que actúa por contacto e ingestión. Se absorbe a través de los lípidos del caparazón de los insectos y contiene escasa persistencia en el medio ambiente y gran actividad insecticida. Posee un amplio espectro de control y gran acción residual. Su estabilidad a la luz y su resistencia permiten controlar reinfestaciones posteriores al tratamiento.",
-    security:
-      "https://www.postcosechasrl.com.ar/wp-content/uploads/2019/11/HOJA-DE-DATOS-DE-SEGURIDAD-DELBUX-POLVO.pdf",
+    security: "/pdf/postion.pdf",
     certificate: "/img/certificados/certificado-postion.jpg",
     tag: "/img/etiquetas/etiqueta-postion.jpg",
   },
@@ -94,8 +89,7 @@ export const PRODUCTS: Product[] = [
     ],
     description:
       "Es un insecticida de baja toxicidad para el hombre, lo que permite aplicarse con mínimas precauciones, de amplio espectro y persistencia, de acción fumigante y por contacto. Se emplea para el tratamiento de granos y semillas almacenados en bolsas o a granel y en instalaciones y transportes. En granos y superficies inertes, brinda hasta un año de protección con una sola aplicación y sin la necesidad de realizar frecuentes tratamientos.",
-    security:
-      "https://www.postcosechasrl.com.ar/wp-content/uploads/2019/11/HOJA-DE-DATOS-DE-SEGURIDAD-DELBUX-POLVO.pdf",
+    security: "/pdf/resolut.pdf",
     certificate: "",
     tag: "",
   },
