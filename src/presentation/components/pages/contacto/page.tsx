@@ -46,7 +46,7 @@ export default function ContactoComponent() {
               <p>info@postcosechasrl.com.ar</p>
             </a>
           </div>
-          <div className="w-full flex flex-row items-start justify-between gap-20">
+          <div className="w-full flex flex-row items-start justify-between gap-20 mt-10">
             <ContactForm></ContactForm>
           </div>
         </div>
