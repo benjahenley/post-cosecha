@@ -12,5 +12,5 @@ export default {
 
     return config;
   },
-  output: "export",
+  // output: "export",
 };
