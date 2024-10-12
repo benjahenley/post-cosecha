@@ -28,7 +28,7 @@ export function PinkButton({
 export function RedButton({ className, children, type, href }: any) {
   return (
     <button
-      className={`${className} p-[0.5rem] w-full max-w-[15rem] lg:max-w-[20rem] rounded-full text-white text-md uppercase font-bold bg-primary flex items-center justify-center overflow-hidden relative group`}
+      className={`${className} p-[0.3rem] w-full max-w-[18rem] lg:max-w-[20rem] rounded-full text-white uppercase font-bold bg-primary flex items-center justify-center overflow-hidden relative group`}
       type={type}>
       <a
         href={href}
@@ -44,11 +44,10 @@ export function ColoredButton({ className, children, type, bg, onClick }: any) {
   return (
     <button
       onClick={onClick}
-      className={`${className} p-[0.5rem] w-full max-w-[15rem] lg:max-w-[20rem] rounded-full text-white text-md uppercase bg-primary font-bold flex items-center justify-center overflow-hidden relative group`}
+      className={`${className} p-[0.5rem] w-full max-w-[15rem] lg:max-w-[18rem] rounded-full text-white text-md hover:transform hover:scale-105 uppercase bg-primary font-bold flex items-center justify-center overflow-hidden relative group`}
       // style={{ backgroundColor: bg }}
       type={type}>
       <BodyBold>{children}</BodyBold>
-      <RightArrow className="w-3 h-3 ml-2 opacity-0 text-white font-extrabold transform transition-all duration-300 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100" />
     </button>
   );
 }

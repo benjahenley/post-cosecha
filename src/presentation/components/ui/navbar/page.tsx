@@ -75,7 +75,7 @@ function Navbar(props: any) {
               scrolled ? "text-white" : "text-black"
             } leading-none text-3xl font-clash font-thin cursor-pointer text-foreground transition-colors duration-500 ease-in-out`}>
             <img
-              className="w-[40px] md:w-[4rem]"
+              className="w-[3.5rem] md:w-[4rem]"
               src="/img/logo.jpg"
               alt="Logo"
             />
@@ -106,7 +106,7 @@ function Navbar(props: any) {
         </div>
 
         <BurguerIcon
-          className={`block sm:hidden w-[2.5rem] h-[2.5rem] ${
+          className={`block sm:hidden w-[3.5rem] h-[3.5rem] ${
             scrolled && "text-white"
           } transition-colors duration-500 ease-in-out`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}

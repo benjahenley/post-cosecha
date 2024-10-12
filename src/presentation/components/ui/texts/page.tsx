@@ -106,8 +106,7 @@ function BodyTitle({ children, className = "" }: Props) {
 
 function BodyBold({ children, className = "" }: Props) {
   return (
-    <h4
-      className={`${className} text-background text-sm sm:text-sm md:text-md lg:text-lg font-bold`}>
+    <h4 className={`${className} text-background text-md md:text-lg font-bold`}>
       {children}
     </h4>
   );
@@ -116,7 +115,7 @@ function BodyBold({ children, className = "" }: Props) {
 function ParagraphText({ children, className = "", color }: Props) {
   return (
     <p
-      className={`${className} text-${color} text-md sm:text-lg md:text-xl lg:text-xl xl:text-3xl font-semibold lg:font-medium`}>
+      className={`${className} text-${color} text-lg sm:text-lg md:text-xl lg:text-xl xl:text-3xl font-semibold lg:font-medium`}>
       {children}
     </p>
   );

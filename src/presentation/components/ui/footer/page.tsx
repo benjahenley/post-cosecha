@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       className={`bg-black text-white py-4 w-full transition-all duration-300 `}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="py-5 flex flex-col-reverse lg:flex-row justify-between items-start lg:items-start">
           <div className="flex flex-col w-full gap-5 mt-10 md:mt-0">
             <h2 className="text-2xl font-bold font-sans">Post Cosecha</h2>

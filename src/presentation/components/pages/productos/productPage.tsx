@@ -29,7 +29,7 @@ export default function ProductComp({ product }: Props) {
       <div className="w-full flex flex-col justify-center items-center">
         <ProductCardSingle {...product} />
 
-        <div className="w-full flex flex-col md:flex-row gap-2 justify-between items-center mt-10">
+        <div className="w-full flex flex-col lg:flex-row gap-2 justify-between items-center mt-10 px-5">
           <ColoredButton bg={product.bg}>
             <a
               target="_blank"

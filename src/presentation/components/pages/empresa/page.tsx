@@ -45,7 +45,7 @@ export default function EmpresaComponent() {
   const animationDelays = [0, 0.3, 0.6]; // Delays for each paragraph
 
   return (
-    <section className="mt-[7rem] mb-[3rem] md:mt-[9rem] flex flex-col items-center justify-center p-2 lg:p-5 max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
+    <section className="mt-[7rem] mb-[3rem] flex flex-col items-center justify-center p-2 lg:p-5 max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
       <InfoSection title="empresa" subtitle="sobre nosotros" />
       <div className="group px-2 lg:px-5 mb-5">
         {[0, 1, 2].map((index) => (
@@ -73,13 +73,13 @@ export default function EmpresaComponent() {
           Nuestra Misión
         </SectionTitleColoured>
       </div>
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-5">
-        <div className="relative lg:w-1/2">
+      <div className="flex flex-col xl:flex-row justify-between items-center xl:items-start gap-5 mt-10 px-2 lg:px-5">
+        <div className="relative xl:w-1/2">
           <ParagraphSectionText
             ref={(el) => {
               paragraphRefs.current[3] = el;
             }}
-            className={`mt-5 px-2 md:px-5 relative z-10 ${
+            className={` relative z-10 ${
               visibleParagraphs.includes(3) ? "animate-fadeUp" : "opacity-0"
             }`}>
             Apuntamos a ser una organización
@@ -96,7 +96,7 @@ export default function EmpresaComponent() {
           <div className="absolute inset-0 bg-gradient-to-r from-green-100 via-white to-green-100 opacity-10 rounded-lg pointer-events-none z-0"></div>
         </div>
 
-        <div className="mt-10 lg:w-1/2">
+        <div className=" w-full xl:lg:w-1/2 px-5 xl:px-0 mt-10 xl:mt-0">
           <video
             controls
             src="/video/seeds.mp4"

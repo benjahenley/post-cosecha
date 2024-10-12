@@ -17,7 +17,6 @@ function NavbarAlternate() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Set scroll direction based on the current scroll position
       if (currentScrollY > lastScrollY) {
         setScrollDirection("down");
       } else {
@@ -27,12 +26,32 @@ function NavbarAlternate() {
       lastScrollY = currentScrollY;
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isMenuOpen &&
+        event.target instanceof HTMLElement &&
+        !event.target.closest("ul")
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleResize = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   return (
     <div
@@ -45,7 +64,7 @@ function NavbarAlternate() {
             href="/"
             className="leading-none text-3xl font-clash font-thin cursor-pointer text-foreground">
             <img
-              className="w-[40px] md:w-[4rem]"
+              className="w-[3.5rem] md:w-[4rem]"
               src="/img/logo.jpg"
               alt="Logo"
             />
@@ -61,7 +80,7 @@ function NavbarAlternate() {
         </div>
 
         <BurguerIcon
-          className="block sm:hidden w-[2.5rem] h-[2.5rem] text-white"
+          className="block sm:hidden w-[3.5rem] h-[3.5rem] text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Open menu"
         />
