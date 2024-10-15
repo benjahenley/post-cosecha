@@ -13,10 +13,10 @@ export default function ProductCardSingle(props: Product) {
           <img
             src={"/" + props.url}
             alt={props.title}
-            className="w-full h-full object-contain transition-[transform,opacity] duration-300    hover:scale-90"
+            className="w-full h-full object-contain transition-[transform,opacity] duration-300 hover:scale-90"
           />
         </div>
-        <SectionTitle className="mb-10 mt-5 text-left text-black ">
+        <SectionTitle className="mb-10 mt-10 text-left text-black">
           {props.title}
         </SectionTitle>
 

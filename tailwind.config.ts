@@ -44,6 +44,9 @@ const config: Config = {
         extrabold: "800",
         black: "900",
       },
+      filter: {
+        "white-to-transparent": "brightness(0) invert(1)",
+      },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(100%)" },

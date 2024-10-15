@@ -50,7 +50,7 @@ export default function MissionStatement({ className }: CardProps) {
     <div
       className={
         className +
-        " relative bg-lightGray flex flex-row w-full justify-center h-auto py-20"
+        " relative bg-lightGray flex flex-row w-full justify-center h-auto py-10 md:py-20"
       }>
       <div className="relative max-w-screen-xl md:px-10 flex flex-col md:flex-row-reverse items-center justify-center gap-5 max-h-lg w-full z-2">
         <div className="w-full max-w-md sm:m-auto md:m-0 md:max-w-md lg:max-w-lg xl:max-w-xl px-5 flex flex-col gap-2">
