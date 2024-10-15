@@ -65,7 +65,7 @@ function NavbarAlternate() {
             className="leading-none text-3xl font-clash font-thin cursor-pointer text-foreground">
             <img
               className="w-[3.5rem] md:w-[4rem]"
-              src="/img/logo.jpg"
+              src="img/logo.jpg"
               alt="Logo"
             />
           </a>

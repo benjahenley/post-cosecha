@@ -56,7 +56,7 @@ export default function LightBoxImage({ src, onClick }: any) {
             className="w-full relative">
             <img
               src={image.src}
-              alt=""
+              alt="img-lightbox"
               className="w-full h-auto object-cover transition-transform transform hover:scale-105"
               style={{
                 aspectRatio: `${image.width} / ${image.height}`,

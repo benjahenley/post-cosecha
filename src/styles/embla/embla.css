@@ -1,3 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-VariableItalic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+:root {
+  --font-general-sans: "GeneralSans", sans-serif;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-general-sans);
+}
+
 .embla {
   width: 100%;
   max-width: 59rem;

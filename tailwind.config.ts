@@ -6,7 +6,6 @@ const config: Config = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/presentation/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -31,7 +30,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-general-sans)", "sans-serif"],
-        clash: ["var(--font-clash-display)", "sans-serif"],
       },
       fontWeight: {
         hairline: "100",
@@ -84,7 +82,7 @@ const config: Config = {
       },
       animation: {
         marquee: "marquee 25s linear infinite",
-        marqueeSmall: "marquee 8s linear infinite",
+        marqueeSmall: "marquee 25s linear infinite",
         fadeIn: "fadeIn 1s ease-out",
         fadeUp: "fadeUp 1s ease-in",
         fadeDown: "fadeDown 1s ease-out",

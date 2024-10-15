@@ -59,7 +59,7 @@ const InfoSection = ({ title, subtitle, style }: Props) => {
       </SectionTitle>
 
       <img
-        src="/img/text-decor/wing.png"
+        src="img/text-decor/wing.png"
         className={`${isTitleVisible ? "animate-fadeIn" : "opacity-0"} h-20`}
       />
     </div>

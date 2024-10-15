@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { forwardRef } from "react";
 
 type Props = {
@@ -160,13 +161,13 @@ function AnimatedNavItem({
   style,
 }: Props) {
   return (
-    <a
+    <Link
       href={href}
       style={style}
       onClick={onClick}
       className={`${className} animate-fadeInLeftBounce font-sans text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl xl:text-2xl relative overflow-hidden hover:text-[#BF0010]`}>
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -174,11 +175,11 @@ function TextWithLink({ href, children, className = "" }: Props) {
   return (
     <li
       className={`${className} text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl sm:text-xl md:text-2xl lg:text-xs relative overflow-hidden`}>
-      <a
+      <Link
         href={href}
         className="h-full transition-transform duration-500 hover:animate-move-up-disappear">
         {children}
-      </a>
+      </Link>
     </li>
   );
 }

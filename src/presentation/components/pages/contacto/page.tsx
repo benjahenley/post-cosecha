@@ -15,7 +15,7 @@ export default function ContactoComponent() {
         <div className="mb-10 bg-white rounded-3xl mt-[7rem] md:mt-[5.5rem] flex flex-col items-center justify-center p-2 pt-10 max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
           <img
             className="absolute left-0 right-0 top-0 bottom-0 z-[-1] h-full object-cover w-full"
-            src="/img/seeds2.jpg"
+            src="img/seeds2.jpg"
           />
           <SectionSubTitle className="mb-0 md:mb-2">Contacto</SectionSubTitle>
           <SectionTitle className="mb-10">Escribinos!</SectionTitle>

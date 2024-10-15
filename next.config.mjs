@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  assetPrefix: "./",
   reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
   },
   webpack(config) {
     config.module.rules.push({

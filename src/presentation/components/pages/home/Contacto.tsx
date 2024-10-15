@@ -19,7 +19,7 @@ export default function Contacto({ className }: CardProps) {
           <ContactForm />
         </div>
         <img
-          src={"/img/crops.png"}
+          src="img/crops.png"
           className="absolute left-0 right-0 top-0 bottom-0 w-full h-full z-99 object-cover"
         />
 
