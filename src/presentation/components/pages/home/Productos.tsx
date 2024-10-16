@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-
-import { SectionSubTitle, SectionTitle } from "../../ui/texts/page";
 import EmblaCarousel from "../../carrousel/EmblaCarousel";
 import { PRODUCTS } from "@/infrastructure/lists/products";
 import InfoSection from "../../ui/infoSection/page";

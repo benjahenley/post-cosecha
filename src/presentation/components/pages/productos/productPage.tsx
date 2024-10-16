@@ -5,6 +5,7 @@ import ProductCardSingle from "@/presentation/components/ui/product-card/single"
 import { ColoredButton } from "@/presentation/components/ui/buttons/page";
 import LightBoxImage from "../../ui/lightbox-image/page";
 import { Product } from "@/infrastructure/interfaces/products";
+import Link from "next/link";
 
 type Props = {
   product: Product;
@@ -21,7 +22,7 @@ export default function ProductComp({ product }: Props) {
 
   const handleCloseLightbox = () => {
     setIsLightboxOpen(false);
-    setActiveMenu(undefined); // Clear the active menu when closing
+    setActiveMenu(undefined);
   };
 
   return (
@@ -31,23 +32,23 @@ export default function ProductComp({ product }: Props) {
 
         <div className="w-full flex flex-col lg:flex-row gap-2 justify-between items-center mt-10 px-5">
           <ColoredButton bg={product.bg}>
-            <a
+            <Link
               target="_blank"
               rel="noopener noreferrer"
-              href={product.security}>
+              href={"/" + product.security}>
               Hoja De Seguridad
-            </a>
+            </Link>
           </ColoredButton>
 
           <ColoredButton
             bg={product.bg}
-            onClick={() => handleOpenLightbox(product.certificate)}>
+            onClick={() => handleOpenLightbox("/" + product.certificate)}>
             Certificado
           </ColoredButton>
 
           <ColoredButton
             bg={product.bg}
-            onClick={() => handleOpenLightbox(product.tag)}>
+            onClick={() => handleOpenLightbox("/" + product.tag)}>
             Etiqueta
           </ColoredButton>
         </div>

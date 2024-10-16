@@ -1,8 +1,6 @@
-import { tree } from "next/dist/build/templates/app-page";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/presentation/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -93,6 +91,5 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
 };
 export default config;

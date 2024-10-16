@@ -5,15 +5,15 @@ import { useForm } from "react-hook-form";
 import { BodyBold } from "../texts/page";
 
 const ContactForm = () => {
-  const [success, setSuccess] = useState(undefined);
-  const [failure, setFailure] = useState(undefined);
+  const [success, setSuccess] = useState<string | undefined>(undefined);
+  const [failure, setFailure] = useState<string | undefined>(undefined);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm();
+  } = useForm<ContactFormProps>();
 
   const onSubmit = async (data: ContactFormProps) => {
     try {

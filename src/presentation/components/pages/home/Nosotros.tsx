@@ -10,7 +10,7 @@ interface CardProps {
 
 export default function Nosotros({ className }: CardProps) {
   const [isTextVisible, setIsTextVisible] = useState(false);
-
+  const isProd = process.env.NODE_ENV !== "production" && "/";
   const textRef = useRef(null);
 
   useEffect(() => {
@@ -94,7 +94,7 @@ export default function Nosotros({ className }: CardProps) {
 
           {/* Static Image for mobile */}
           <img
-            src="img/leaves.jpg"
+            src={"img/leaves.jpg"}
             className="xl:hidden max-h-[34rem] rounded-3xl"
           />
 
@@ -111,7 +111,7 @@ export default function Nosotros({ className }: CardProps) {
               investigación de nuevos productos, sumados a nuestra línea
               tradicional, son nuestra respuesta a las necesidades que impone un
               mercado en creciente expansión, al cual venimos proveyendo desde
-              hace 25 años con un alto compromiso de calidad y distribución.
+              hace 30 años con un alto compromiso de calidad y distribución.
               <br /> <br /> Con representantes en todo el país, Post Cosecha
               S.R.L. garantiza una red de distribución inmediata para asegurarle
               un mejor servicio al cliente.

@@ -11,15 +11,17 @@ interface CardProps {
   className?: string;
 }
 export default function Contacto({ className }: CardProps) {
+  const isProd = process.env.NODE_ENV === "production" ? "" : "/";
+
   return (
     <>
       <div className={`${className} w-full flex justify-center pt-10 lg:pb-10`}>
-        <div className="relative z-30 w-full bg-white max-w-md md:max-w-lg lg:max-w-2xl p-2 rounded-3xl shadow-md pt-10 md:pt-12">
+        <div className="px-3 relative z-30 w-full bg-white max-w-md md:max-w-lg lg:max-w-2xl p-2 rounded-3xl shadow-md pt-10 md:pt-12">
           <InfoSection subtitle="escribinos!" title="estamos para ayudarte" />
           <ContactForm />
         </div>
         <img
-          src="img/crops.png"
+          src={isProd + "img/crops.png"}
           className="absolute left-0 right-0 top-0 bottom-0 w-full h-full z-99 object-cover"
         />
 

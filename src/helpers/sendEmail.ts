@@ -1,4 +1,4 @@
-export const onSubmit = async (data) => {
+export const onSubmit = async (data: any) => {
   try {
     const response = await fetch("/api/send-email", {
       method: "POST",

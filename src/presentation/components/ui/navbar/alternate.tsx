@@ -6,6 +6,7 @@ import {
   TextWithLink,
 } from "@/presentation/components/ui/texts/page";
 import { BurguerIcon } from "@/assets/svg";
+import Link from "next/link";
 
 function NavbarAlternate() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,15 +61,15 @@ function NavbarAlternate() {
       }`}>
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-5">
-          <a
+          <Link
             href="/"
             className="leading-none text-3xl font-clash font-thin cursor-pointer text-foreground">
             <img
               className="w-[3.5rem] md:w-[4rem]"
-              src="img/logo.jpg"
+              src="/img/logo.jpg"
               alt="Logo"
             />
-          </a>
+          </Link>
         </div>
 
         <div className="w-full h-full hidden sm:flex flex-row md:items-center gap-5 justify-end max-w-lg">

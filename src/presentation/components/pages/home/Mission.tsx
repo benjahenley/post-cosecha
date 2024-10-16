@@ -72,7 +72,7 @@ export default function MissionStatement({ className }: CardProps) {
         </div>
         <div className="overflow-hidden w-auto z-10 px-4 mt-5 py-5">
           <img
-            src="img/seeds1.jpg"
+            src={"img/seeds1.jpg"}
             className="rounded-3xl border-black z-1 max-h-[300px]"
             style={{ boxShadow: "-5px 5px 15px black" }}
             alt="Seeds"

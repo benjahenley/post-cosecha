@@ -25,7 +25,7 @@ export default function HomeLanding({ className, onSubmit }: CardProps) {
         id="hero-section"
         className="bg-opacity-80 bg-black fixed top-0 left-0 z-[-1] right-0 w-full h-[100vh]">
         <video
-          src="video/banner.mp4"
+          src={"video/banner.mp4"}
           className="absolute top-0 left-0 w-full h-full object-cover z-1 bg-white opacity-50"
           autoPlay
           loop

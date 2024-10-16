@@ -2,13 +2,9 @@ import InteresGeneral from "@/presentation/components/pages/productos/Interes";
 import Productos from "@/presentation/components/pages/productos/Productos";
 import Navbar from "@/presentation/components/ui/navbar/alternate";
 
-interface CardProps {
-  className?: string;
-}
-
-export default function ProductosPage({ className }: CardProps) {
+export default function ProductosPage() {
   return (
-    <div className={`${className} relative overflow-hidden`}>
+    <div className={`relative overflow-hidden`}>
       <Navbar />
       <Productos className="w-full bg-white pb-10 md:pb-0" />
       <InteresGeneral />

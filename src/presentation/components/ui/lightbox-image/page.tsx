@@ -3,9 +3,15 @@
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { useEffect, useState, useRef } from "react";
 
+interface ImageDimensions {
+  src: string;
+  width: number;
+  height: number;
+}
+
 export default function LightBoxImage({ src, onClick }: any) {
-  const [imageDimensions, setImageDimensions] = useState([]);
-  const lightboxRef = useRef(null);
+  const [imageDimensions, setImageDimensions] = useState<ImageDimensions[]>([]);
+  const lightboxRef = useRef<PhotoSwipeLightbox | null>(null);
 
   useEffect(() => {
     const loadImages = async () => {

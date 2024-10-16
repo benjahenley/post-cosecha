@@ -24,7 +24,7 @@ export default function EmpresaComponent() {
           }
         });
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
     paragraphRefs.current.forEach((ref) => {
@@ -42,7 +42,7 @@ export default function EmpresaComponent() {
     };
   }, [visibleParagraphs]);
 
-  const animationDelays = [0, 0.3, 0.6]; // Delays for each paragraph
+  const animationDelays = [0, 0.3, 0.6];
 
   return (
     <section className="mt-[7rem] mb-[3rem] flex flex-col items-center justify-center p-2 lg:p-5 max-w-xl lg:max-w-3xl xl:max-w-screen-lg m-auto">
@@ -96,9 +96,12 @@ export default function EmpresaComponent() {
           <div className="absolute inset-0 bg-gradient-to-r from-green-100 via-white to-green-100 opacity-10 rounded-lg pointer-events-none z-0"></div>
         </div>
 
-        <div className=" w-full xl:lg:w-1/2 px-5 xl:px-0 mt-10 xl:mt-0">
+        <div className="w-full xl:lg:w-1/2 px-5 xl:px-0 mt-10 xl:mt-0">
           <video
-            controls
+            autoPlay
+            loop
+            muted
+            playsInline
             src="/video/seeds.mp4"
             className="rounded-lg shadow-lg w-full"></video>
         </div>
