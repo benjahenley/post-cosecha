@@ -1,4 +1,4 @@
-type ContactFormProps = {
+export type ContactFormProps = {
   email: string;
   nombre: string;
   telefono: string;

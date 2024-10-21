@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "/src/styles/embla.css";
-import "/src/styles/global.css";
+import "../styles/embla.css";
+import "../styles/global.css";
 import "photoswipe/style.css";
 import Footer from "@/presentation/components/ui/footer/page";
 

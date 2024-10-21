@@ -3,8 +3,18 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   mode: "jit",
   content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/presentation/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  safelist: [
+    "animate-fadeIn",
+    "animate-fadeUp",
+    "animate-fadeDown",
+    "animate-fadeLeft",
+    "animate-fadeRight",
+    "animate-fadeInLeftBounce",
+    "animate-slideUp",
   ],
   theme: {
     extend: {

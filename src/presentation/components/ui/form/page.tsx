@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { BodyBold } from "../texts/page";
+import { sendEmail } from "@/apps/emailJS";
+import { ContactFormProps } from "@/infrastructure/interfaces/contact";
 
 const ContactForm = () => {
   const [success, setSuccess] = useState<string | undefined>(undefined);
@@ -17,24 +19,17 @@ const ContactForm = () => {
 
   const onSubmit = async (data: ContactFormProps) => {
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const response = await sendEmail(data);
 
-      if (response.ok) {
-        reset();
+      if (response) {
         setSuccess("Email sent successfully");
-        setFailure(undefined); // Clear failure message
-      } else {
-        setFailure("Failed to send email.");
-        setSuccess(undefined); // Clear success message
+        setFailure(undefined);
+        reset();
       }
     } catch (error) {
-      console.error(error);
+      console.error("Failed to send email:", error);
       setFailure("Failed to send email.");
-      setSuccess(undefined); // Clear success message
+      setSuccess(undefined);
     }
   };
 

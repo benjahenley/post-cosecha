@@ -77,11 +77,14 @@ export default function Message({ className }: CardProps) {
           className={`text-center text-pretty ${
             isParagraphVisible ? "animate-fadeUp" : "opacity-0"
           }`}>
-          La integridad, la transparencia y una sólida ética de trabajo son la
-          base de nuestros valores. Nos enorgullece contribuir a la comunidad y
-          al medio ambiente. Nuestro objetivo es dejar la tierra en mejores
-          condiciones hoy para construir un futuro más prometedor para las
-          generaciones venideras.
+          La integridad, la transparencia y una ética de trabajo sólida son los
+          pilares fundamentales de nuestros valores. Nos enorgullece ofrecer
+          soluciones innovadoras y sostenibles para la protección de granos
+          almacenados, contribuyendo no solo a la productividad del sector
+          agrícola, sino también al bienestar de la comunidad y del medio
+          ambiente. Nuestro objetivo es preservar los recursos naturales hoy,
+          para garantizar un futuro más seguro y próspero para las próximas
+          generaciones.
         </ParagraphSectionText>
       </div>
     </div>
