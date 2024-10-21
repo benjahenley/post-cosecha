@@ -1,9 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  mode: "jit",
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/presentation/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/presentation/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -27,7 +28,7 @@ const config: Config = {
         secondary: "#4B9CD3",
       },
       fontFamily: {
-        sans: ["var(--font-general-sans)", "sans-serif"],
+        sans: ["Noto Sans Display", "sans-serif"],
       },
       fontWeight: {
         hairline: "100",

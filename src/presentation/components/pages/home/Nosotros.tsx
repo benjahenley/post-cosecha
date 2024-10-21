@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { RedButtonComplement } from "../../ui/buttons/page";
 import { ParagraphSectionText } from "../../ui/texts/page";
 import InfoSection from "../../ui/infoSection/page";
+import Link from "next/link";
 
 interface CardProps {
   className?: string;
@@ -72,7 +73,7 @@ export default function Nosotros({ className }: CardProps) {
 
         <div className="relative flex flex-col-reverse xl:flex-row-reverse gap-5 items-start">
           {/* Interactive Image on the right */}
-          <a
+          <Link
             className="w-full h-full overflow-hidden"
             href="/empresa"
             onMouseMove={handleMouseMove}
@@ -90,7 +91,7 @@ export default function Nosotros({ className }: CardProps) {
                 } hidden xl:block max-h-[34rem] w-full h-full`}
               />
             </div>
-          </a>
+          </Link>
 
           {/* Static Image for mobile */}
           <img

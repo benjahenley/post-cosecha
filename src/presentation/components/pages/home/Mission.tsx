@@ -64,10 +64,10 @@ export default function MissionStatement({ className }: CardProps) {
             className={`${
               isParagraphVisible ? "animate-fadeUp" : "opacity-0"
             } mt-2`}>
-            La investigación de nuevos productos, sumados a nuestra línea
-            tradicional, son nuestra respuesta a las necesidades que impone un
-            mercado en creciente expansión, al cual venimos proveyendo desde
-            hace 30 años con un alto compromiso de calidad y distribución.
+            Desde el momento en que la cosecha es recogida hasta que el producto
+            final llega a su destino, estamos a tu lado en cada etapa del
+            proceso. Nos aseguramos de que cada paso cuente con el respaldo
+            necesario para mantener la calidad y proteger tu inversión.
           </ParagraphSectionText>
         </div>
         <div className="overflow-hidden w-auto z-10 px-4 mt-5 py-5">

@@ -1,6 +1,7 @@
 import { RightArrow } from "@/assets/svg";
 import { BodyBold } from "../texts/page";
 import { forwardRef } from "react";
+import Link from "next/link";
 
 type ButtonProps = {
   className: string;
@@ -30,11 +31,11 @@ export function RedButton({ className, children, type, href }: any) {
     <button
       className={`${className} p-[0.3rem] w-full max-w-[18rem] lg:max-w-[20rem] rounded-full text-white uppercase font-bold bg-primary flex items-center justify-center overflow-hidden relative group`}
       type={type}>
-      <a
+      <Link
         href={href}
         className="inline-block transform transition-transform duration-300 group-hover:-translate-x-2">
         <BodyBold>{children}</BodyBold>
-      </a>
+      </Link>
       <RightArrow className="w-3 h-3 ml-2 opacity-0 text-white font-extrabold transform transition-all duration-300 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100" />
     </button>
   );
@@ -62,11 +63,11 @@ export const RedButtonComplement = forwardRef(
         className={`${className} text-primary w-full text-md lg:text-lg uppercase font-bold overflow-hidden relative group`}
         type="button"
         {...props}>
-        <a
+        <Link
           href={href}
           className="inline-block transform transition-transform duration-300 group-hover:-translate-x-2 group-hover:underline">
           {children}
-        </a>
+        </Link>
         <RightArrow className="hidden w-3 h-3 ml-2 opacity-0 text-primary font-extrabold transform transition-[opacity,translate] duration-500 -translate-x-2 group-hover:translate-x-0 group-hover:inline group-hover:opacity-100" />
       </button>
     );

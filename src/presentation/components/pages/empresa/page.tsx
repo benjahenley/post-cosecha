@@ -9,6 +9,7 @@ import InfoSection from "../../ui/infoSection/page";
 export default function EmpresaComponent() {
   const [visibleParagraphs, setVisibleParagraphs] = useState<number[]>([]);
   const paragraphRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,6 +43,14 @@ export default function EmpresaComponent() {
     };
   }, [visibleParagraphs]);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Autoplay prevented:", error);
+      });
+    }
+  }, []);
+
   const animationDelays = [0, 0.3, 0.6];
 
   return (
@@ -63,7 +72,7 @@ export default function EmpresaComponent() {
             {index === 0
               ? "Post Cosecha S.R.L. es una empresa dedicada a la producción, importación y comercialización de productos específicos para el control de plagas de los granos almacenados."
               : index === 1
-              ? "La investigación de nuevos productos, sumados a nuestra línea tradicional, son nuestra respuesta a las necesidades que impone un mercado en creciente expansión, al cual venimos proveyendo desde hace 25 años con un alto compromiso de calidad y distribución."
+              ? "La investigación de nuevos productos, sumados a nuestra línea tradicional, son nuestra respuesta a las necesidades que impone un mercado en creciente expansión, al cual venimos proveyendo desde hace 30 años con un alto compromiso de calidad y distribución."
               : "Con representantes en todo el país, Post Cosecha S.R.L. garantiza una red de distribución inmediata para asegurarle un mejor servicio al cliente."}
           </ParagraphSectionText>
         ))}
@@ -98,10 +107,13 @@ export default function EmpresaComponent() {
 
         <div className="w-full xl:lg:w-1/2 px-5 xl:px-0 mt-10 xl:mt-0">
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
+            controls={false}
+            preload="auto"
             src="/video/seeds.mp4"
             className="rounded-lg shadow-lg w-full"></video>
         </div>

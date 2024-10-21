@@ -11,6 +11,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import ProductCard from "../ui/product-card/page";
 import { Product } from "@/infrastructure/interfaces/products";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type PropType = {
   slides: Product[];
@@ -29,10 +30,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  function handleClick(id: string) {
-    router.push("/productos/" + id);
-  }
-
   return (
     <section className="embla ">
       <div
@@ -41,12 +38,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container p-2">
           {slides.map((slide: Product, index) => {
             return (
-              <div
+              <Link
                 className="embla__slide"
                 key={index}
-                onClick={() => handleClick(slide.id)}>
+                href={`/productos/${slide.id}`}>
                 <ProductCard {...slide}></ProductCard>
-              </div>
+              </Link>
             );
           })}
         </div>

@@ -77,7 +77,7 @@ function Navbar(props: any) {
             } leading-none text-3xl font-clash font-thin cursor-pointer text-foreground transition-colors duration-500 ease-in-out`}>
             <img
               className="w-[3.5rem] md:w-[4rem]"
-              src="/img/logo.jpg"
+              src="img/logo.jpg"
               alt="Logo"
             />
           </Link>

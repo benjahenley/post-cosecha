@@ -162,7 +162,7 @@ function AnimatedNavItem({
 }: Props) {
   return (
     <Link
-      href={href ? href : ""}
+      href={href!}
       style={style}
       onClick={onClick}
       className={`${className} animate-fadeInLeftBounce font-sans text-white font-bold leading-none cursor-pointer transition-colors duration-300 text-xl xl:text-2xl relative overflow-hidden hover:text-[#BF0010]`}>

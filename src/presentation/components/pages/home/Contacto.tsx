@@ -1,11 +1,5 @@
-import { RedButton, RedButtonComplement } from "../../ui/buttons/page";
 import ContactForm from "../../ui/form/page";
 import InfoSection from "../../ui/infoSection/page";
-import {
-  ParagraphSectionText,
-  SectionSubTitle,
-  SectionTitle,
-} from "../../ui/texts/page";
 
 interface CardProps {
   className?: string;

@@ -9,7 +9,12 @@ interface ImageDimensions {
   height: number;
 }
 
-export default function LightBoxImage({ src, onClick }: any) {
+type Props = {
+  onClose: () => void;
+  src: string;
+};
+
+export default function LightBoxImage({ src, onClose }: Props) {
   const [imageDimensions, setImageDimensions] = useState<ImageDimensions[]>([]);
   const lightboxRef = useRef<PhotoSwipeLightbox | null>(null);
 
@@ -79,7 +84,7 @@ export default function LightBoxImage({ src, onClick }: any) {
               Descargar
             </a>
             <button
-              onClick={onClick}
+              onClick={onClose}
               className="text-center w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 shadow-md transition-colors">
               Cerrar
             </button>

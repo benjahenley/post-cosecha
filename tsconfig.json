@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": false, // Enforce TypeScript only
+    "allowJs": false,
     "skipLibCheck": true, // Skips type checking of .d.ts files, useful for faster builds
     "strict": true, // Enable strict type checking
     "noEmit": true, // No need to emit JS since Next.js handles it
@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // Use the appropriate JSX mode for Next.js
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {
@@ -19,7 +19,6 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/styles": ["./styles/*"],
       "public/*": ["./public/*"]
     }
   },
